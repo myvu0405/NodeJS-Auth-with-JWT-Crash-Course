@@ -1,9 +1,11 @@
 const express=require('express');
 const mainController=require('../controllers/mainController');
-const {checkUser}=require('../middlewares/authMiddleware');
+//const {checkUser}=require('../middlewares/authMiddleware');
 
 const mainRouter=express.Router();
 
-mainRouter.all('/',checkUser, mainController.getHomepage);
+//mainRouter.all('/',checkUser, mainController.getHomepage);
+mainRouter.all('/',mainController.getHomepage);
+
 
 module.exports=mainRouter;

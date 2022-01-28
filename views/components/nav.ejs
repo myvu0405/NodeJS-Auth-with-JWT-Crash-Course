@@ -9,12 +9,16 @@
           <li class="nav-item">
             <h1><a class="nav-link active menu navbar-brand" aria-current="page" href="/">Homepage</a></h1>
           </li>
+
             <% if(locals.user) {%>   
               <li class="nav-item">Welcome user: <%=locals.user.username%></li>
-              <li class="nav-item"><a class="btn btn-danger" href="/setting">Settings</a></li>
+              <li class="nav-item"><a class="btn btn-success" href="/askQuestion">Ask a Question</a></li>
+              <li class="nav-item"><a class="btn btn-warning" href="/setting">Settings</a></li>
+
 
               <li class="nav-item"><a class="btn btn-danger" href="/logout">Log out</a></li>
             <% } else { %>
+
               <li class="nav-item"><a class="btn btn-success" href="/login">Log in</a></li>
               <li class="nav-item"><a class='btn btn-warning' href="/signup">Sign up</a></li>
             <% } %>

@@ -58,7 +58,7 @@ const loginFunc = (req,res)=> {
 const logoutFunc=(req,res) =>{
     //res.cookie('jwt','',{maxAge:1});
     res.clearCookie('jwt');
-    res.redirect('/');
+    res.redirect('/login');
 }
 
 module.exports={

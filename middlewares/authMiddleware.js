@@ -2,6 +2,26 @@ const User=require('../models/user');
 const jwt=require('jsonwebtoken');
 const secretKey=process.env.SECRET_KEY;
 
+
+const checkUserAuth = async (req, res, next ) => {
+
+    const token= req.cookies.jwt;
+    //check jwt is exist en verified
+    if(token) {
+        //verify the token
+        try {
+            const authUser = await jwt.verify(token,secretKey);
+            next();
+        }
+        catch(err) {
+            res.redirect('/login');
+        }
+    } else {
+        res.redirect('/login');
+    }
+}
+
+
 const checkUser = async (req,res,next)=>{
 
     const token=req.cookies.jwt;
@@ -35,4 +55,4 @@ const checkUser = async (req,res,next)=>{
     }
 }
 
-module.exports={checkUser}
+module.exports={checkUserAuth,checkUser}
