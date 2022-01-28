@@ -4,18 +4,25 @@
     <h2>Signup</h2>
     <div class="mb-3">
         <label for="username" class="form-label">Username:</label>
-        <input type="text" name="username" class="form-control" id="username">
-        <small class="form-text warning"></small>
+        <input type="text" name="username" class="form-control" id="username" value="<%=signupVals.username%>">
+        
+        <% if (errors.username) { %>
+            <small class="form-text warning"><%=errors.username%></small>
+        <% } %>
     </div>
     <div class="mb-3">
         <label for="email" class="form-label">Email address:</label>
-        <input type="email" name="email" class="form-control" id="email">
-        <small class="form-text warning"></small>
+        <input type="email" name="email" class="form-control" id="email" value="<%=signupVals.email%>">
+        <% if (errors.email) { %>
+            <small class="form-text warning"><%=errors.email%></small>
+        <% } %>
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Password:</label>
-        <input type="password" name="password" class="form-control" id="password">
-        <small class="form-text warning"></small>
+        <input type="password" name="password" class="form-control" id="password" value="<%=signupVals.password%>">
+        <% if (errors.password) { %>
+            <small class="form-text warning"><%=errors.password%></small>
+        <% } %>
     </div>
     <button type="submit" class="btn btn-primary">Signup</button>
 </form>

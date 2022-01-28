@@ -6,13 +6,17 @@
     
     <div class="mb-3">
         <label for="email" class="form-label">Email address:</label>
-        <input type="email" name="email" class="form-control" id="email">
-        <small class="form-text warning"></small>
+        <input type="email" name="email" class="form-control" id="email" value="<%=loginVals.email%>">
+        <% if (errors.email) { %>
+            <small class="form-text warning"><%=errors.email%></small>
+        <% } %>
     </div>
     <div class="mb-3">
         <label for="password" class="form-label">Password:</label>
-        <input type="password" name="password" class="form-control" id="password">
-        <small class="form-text warning"></small>
+        <input type="password" name="password" class="form-control" id="password" value="<%=loginVals.password%>">
+        <% if (errors.password) { %>
+            <small class="form-text warning"><%=errors.password%></small>
+        <% } %>
     </div>
     <button type="submit" class="btn btn-primary">Login</button>
 </form>
